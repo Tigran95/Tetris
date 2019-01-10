@@ -14,11 +14,11 @@ public enum AudioTypes
 public class AudioSelecting : MonoBehaviour {
 
 
-    public AudioSource clickAudio;
-    public AudioSource moveDownAudio;
-    public AudioSource rotateAudio;
-    public AudioSource destroyTilesAudio;
-    public AudioSource loseAudio;
+   [SerializeField] private AudioSource _clickAudio;
+   [SerializeField] private AudioSource _moveDownAudio;
+  [SerializeField]  private AudioSource _rotateAudio;
+   [SerializeField] private AudioSource _destroyTilesAudio;
+  [SerializeField]  private AudioSource _loseAudio;
 
     public static bool isCreatedThis=false;
     public void Awake()
@@ -35,19 +35,19 @@ public class AudioSelecting : MonoBehaviour {
         switch (audio)
         {
             case AudioTypes.click:
-                clickAudio.Play(); break;
+                _clickAudio.Play(); break;
 
             case AudioTypes.moveDown:
-                moveDownAudio.Play(); break;
+                _moveDownAudio.Play(); break;
 
             case AudioTypes.rotate:
-                rotateAudio.Play();   break;
+                _rotateAudio.Play();   break;
 
             case AudioTypes.destroyTiles:
-                destroyTilesAudio.Play();  break;
+                _destroyTilesAudio.Play();  break;
 
             case AudioTypes.lose:
-                loseAudio.Play(); break;
+                _loseAudio.Play(); break;
 
             default:
                 break;
